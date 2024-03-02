@@ -11,6 +11,7 @@ import ThreeDImageSlider from "@/components/Gallery";
 import { motion } from 'framer-motion'
 import SliderComponent from "@/components/Gallery";
 import Footer from "@/components/Footer";
+import Head from "next/head";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -24,6 +25,15 @@ export default function Home() {
 
   return (
     <div className="w-full h-full ">
+      <Head>
+        <title>श्री क्षेत्र संस्थान नारायण गड | Shri Kshetra Narayangad</title>
+        <meta name="description" content="श्री क्षेत्र संस्थान नारायण गड या संस्थानाची स्थापना श्री संत नारायण महाराज यांनी केली. हे तीर्थक्षेत्र बीडच्या वायव्य दिशेस असून ते बीडपासून २१ किलोमीटर अंतरावर आहे. ही वेबसाइट नारायणगडाबद्दल अधिक जाणून घेऊ इच्छिणाऱ्या भक्तांसाठी,वाचकांसाठी आणि अभ्यासकांसाठी  बनवली आहे" />
+        <meta name="keywords" content="Narayangad, श्री क्षेत्र संस्थान नारायण गड, श्री संत नारायण महाराज, Shri sant narayan maharaj, narayan maharaj, shivaji maharaj, shivaji maharaj narayangad, shivaji maharaj beed, Shri Kshetra Narayangad, Beed, Maharashtra, Nagad Narayan, Nagad Narayan Maharaj" />
+        <meta name="robots" content="index, follow" /> {/* To instruct search engines to index the content */}
+        <meta name="author" content="Shri Kshetra Narayangad" /> {/* Add author information if necessary */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" /> {/* Responsive viewport setting */}
+      </Head>
+
       <Navbar />
       <div className="bg-black">
         <Hero />
