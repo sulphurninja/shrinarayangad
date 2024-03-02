@@ -16,9 +16,9 @@ const Navbar = () => {
       animate='visible'
       variants={variants}
     >
-      <img src='/logo.png' className='h-16  ' />
+      <img src='/logo.png' className='lg:h-16 h-14  ' />
       <motion.div
-        className='flex text-md gap-6 my-auto'
+        className='flex text-md gap-2 lg:gap-6 space-x-2 lg:space-x-0 my-auto'
         initial='hidden'
         animate='visible'
         variants={variants}
