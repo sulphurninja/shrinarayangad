@@ -32,6 +32,7 @@ export default function Home() {
         <meta name="robots" content="index, follow" /> {/* To instruct search engines to index the content */}
         <meta name="author" content="Shri Kshetra Narayangad" /> {/* Add author information if necessary */}
         <meta name="viewport" content="width=device-width, initial-scale=1.0" /> {/* Responsive viewport setting */}
+        <link rel="icon" href="/favicon.ico" /> {/* Update the filename if you're using a different one */}
       </Head>
 
       <Navbar />
