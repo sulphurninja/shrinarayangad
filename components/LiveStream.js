@@ -44,7 +44,7 @@ const LiveStream = () => {
   }, []);
 
   return (
-    <div className='relative h-96  mt-4  overflow-hidden shadow-md bg-gray-800'>
+    <div className='relative h-96  mt-4 rounded-lg  overflow-hidden shadow-md bg-gray-800'>
       {/* YouTube player container */}
       <div
         id='youtubePlayer'
