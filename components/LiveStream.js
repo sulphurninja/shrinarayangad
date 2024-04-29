@@ -1,59 +1,35 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 const LiveStream = () => {
-  useEffect(() => {
-    // Replace 'YOUR_YOUTUBE_VIDEO_ID' with the actual YouTube video ID of your live stream
-    const videoId = 'gonI8yFHkqU';
+  // Array of YouTube video IDs
+  const videoIds = ['1zQE2LGsDSs', 'gfwuTkeWPjU', 'dotDrUEKszQ', 'fBcf2VrcH8w', '1wYaQTxp1wM', 'Cj-uPH6gUVY'];
 
-    // Load YouTube iFrame API
-    const script = document.createElement('script');
-    script.src = 'https://www.youtube.com/iframe_api';
-    document.body.appendChild(script);
 
-    script.onload = () => {
-      // Initialize YouTube player once the API is loaded
-      window.onYouTubeIframeAPIReady = () => {
-        new window.YT.Player('youtubePlayer', {
-          videoId: videoId,
-          playerVars: {
-            autoplay: 1,
-            controls: 0,
-            modestbranding: 1,
-            disablekb: 1,
-            enablejsapi: 1,
-            fs: 0,
-            iv_load_policy: 3,
-            rel: 0,
-            showinfo: 0,
-          },
-          events: {
-            onReady: onPlayerReady,
-          },
-        });
-      };
-    };
-
-    const onPlayerReady = (event) => {
-      // You can perform any actions when the player is ready
-    };
-
-    // Cleanup function
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
 
   return (
-    <div className='relative h-96  mt-4 rounded-lg  overflow-hidden shadow-md bg-gray-800'>
-      {/* YouTube player container */}
-      <div
-        id='youtubePlayer'
-        className='absolute top-0 left-0 w-full h-full'
-      ></div>
+    <div className="   gap-4">
+    <div className='grid grid-cols-2 gap-4'>
+      {videoIds.map(videoId => (
+        <div key={videoId} className="relative h-48 w-full rounded-lg overflow-hidden shadow-md ">
+          {/* YouTube player container */}
+          <div className="absolute top-0 left-0 w-full h-full">
+            {/* Embed your YouTube video using an iframe */}
+            <iframe
+              id={`youtubePlayer_${videoId}`}
+              title={`YouTube Video ${videoId}`}
+              width="100%"
+              height="100%"
+              src={`https://www.youtube.com/embed/${videoId}?autoplay=0&controls=0&modestbranding=1&disablekb=1&enablejsapi=1&fs=0&iv_load_policy=3&rel=0&showinfo=0`}
+              frameBorder="0"
+              allow="autoplay; encrypted-media"
+              allowFullScreen
+            ></iframe>
+          </div>
 
-      {/* Optional overlay or controls */}
-      <div className='absolute top-0 left-0 w-full h-full flex items-center justify-center'>
-        {/* You can add play/pause button, controls, or other overlays here */}
+          {/* Overlay controls */}
+        
+        </div>
+      ))}
       </div>
     </div>
   );
